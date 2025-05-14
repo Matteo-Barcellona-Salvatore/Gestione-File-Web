@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #e3e9f1);
+    color: #333;
+    padding: 40px 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+    animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.upload-section {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    animation: fadeIn 0.8s ease-out;
+}
+
+#file-upload {
+    width: 70%;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#file-upload:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 12px rgba(72, 189, 72, 0.7);
+}
+
+#file-upload::-webkit-file-upload-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#file-upload::-webkit-file-upload-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+#file-upload::-webkit-file-upload-button:active {
+    background-color: #388e3c;
+    transform: scale(1);
+}
+
+#file-upload::-webkit-file-upload-button:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 12px rgba(72, 189, 72, 0.7);
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 16px;
+    background-color: #d2cc05;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+    background-color: #ffa719;
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+button.delete {
+    background-color: #f44336;
+}
+
+button.delete:hover {
+    background-color: #ff1915;
+}
+
+.file-list {
+    margin-top: 40px;
+    animation: fadeIn 1s ease-out;
+}
+
+
+.file-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.file-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    transform: translateY(10px);
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+}
+
+.file-actions {
+    display: flex;
+}
+
+
+.file-name {
+    flex: 1;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+button.analyze {
+    background-color: #4CAF50;
+    color: white;
+    padding: 6px 12px;
+    margin-left: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.analyze:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.file-list li:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-5px);
+}
+
+.file-list li span {
+    font-size: 14px;
+    color: #666;
+}
+
+.file-list li .file-name {
+    font-weight: bold;
+    color: #333;
+}
+
+button.delete,
+button.download {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 10px;
+}
+
+button.delete {
+    background-color: #f44336;
+    color: white;
+}
+
+button.delete:hover {
+    background-color: #e53935;
+    transform: scale(1.1);
+}
+
+button.download {
+    background-color: #1370d3;
+    color: white;
+}
+
+button.download:hover {
+    background-color: #455fa0;
+    transform: scale(1.1);
+}
+
+
+@keyframes loadingAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.file-list li.loading {
+    animation: loadingAnimation 1s ease-in-out infinite;
+}
